@@ -4,140 +4,172 @@
         <title>LOVE&GIFT</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
         <style>
 
-            body {
-                background: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
-            }
-            #myCarousel {
-                height: 554px;
-            }
-
-            .btn-primary {
-                background-color: #E61C64;
-                border-color: #E61C64;
-                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-            }
-            .btn-primary:hover {
-                background-color: #d10b51;
-                border-color: #d10b51;
-                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-            }
-
-            .btn-info {
-                background-color: #4d3a57;
-                border-color: #fff;
-                border-top-color: transparent;
-                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-                font-size: 20px;
-                border-radius: 0;
-
-            }
-            .btn-info:hover {
-                background-color: #E61C64;
-                border-color: #fff;
-                border-top-color: transparent;
-                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-                font-size: 20px;
-                border-radius: 0;
-            }
-
-            .btn-group {
-                height: 120px;
-
-            }
-
-            .TagName {
-                font-family: 'Open Sans', sans-serif;
-                font-size: 18px;
-            }
-
-            .TagName a {
-                display: inline-block;
-            }
-
-            b {
-                font-size: 25px;
-
-            }
-
-            h1 {
-                font-size: 3em;
-                margin-top: 30px;
-
-            }
-
-            .ItmeTitle {
+            table,
+            td,
+            th {
+                border: 12px solid white;
                 text-align: center;
-                margin-top: 120px;
-                margin-bottom: 50px;
+                background-color: red;
             }
 
-        </style>
-    </head>
+            .image {
+                position: relative;
+                width: 100%;
+            }
 
+            .product_data {
+                position: relative;
+                width: 50%;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: 0.5s ease;
+                background-color: #000;
+            }
+            .product_data:hover .overlay {
+                opacity: 0.9;
+            }
+
+            .imgblock a {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+            }
+
+            .product_data .text {
+                text-align: center;
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+            }
+
+            .i_title {
+                font-size: 32px;
+                font-weight: bold;
+
+            }
+
+            .i_subtitled {
+                font-size: 18px;
+                opacity: 0.7;
+
+            }
+
+            .i_price {
+                font-size: 50px;
+                font-weight: bold;
+                padding-top: 20px !important;
+            }
+
+            span {
+                text-align: center;
+            }
+
+            div.img {
+                border: 1px solid #ccc;
+            }
+            div.img:hover {
+                border: 1px solid red;
+            }
+
+            div.img img {
+                position: relative;
+                width: 100%;
+                height: auto;
+
+            }
+
+            .img {
+                position: relative;
+                width: 100%;
+            }
+
+            div.desc {
+                padding: 15px;
+                text-align: center;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .responsive {
+                margin: 15px 0;
+                padding: 0 8px;
+                float: left;
+                width: 24.99999%;
+            }
+            @media only screen and (max-width: 700px) {
+                .responsive {
+                    width: 49.99999%;
+                    margin: 6px 0;
+                }
+            }
+            @media only screen and (max-width: 500px) {
+                .responsive {
+                    width: 100%;
+                }
+            }
+            .clearfix:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            #carousel-example-generic {
+                height: 400px;
+            }
+        </style>
+
+    </head>
     <body>
 
-        <!-- 以下是首屏 banner -->
-        <div class="row">
+        <!-- 以下是首屏滚动图 -->
+        <div class="container-fluid">
             <div class="row">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                     </ol>
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <a href="https://love-and-gift.herokuapp.com/products/1"><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fcpd5d3hhgj31hc0ku4qp.jpg" alt="rose"></a>
+                            <img src="#" alt="#">
                             <div class="carousel-caption">
-                                <span class="lead">
-                                    <h1>EXPRESSION OF LOVE</h1><br>
-                                    <p>
-                                        <a class="btn btn-lg btn-default" href="https://love-and-gift.herokuapp.com/products/1">Buy Now</a>
-                                    </p>
-                                </span>
+                                ...
                             </div>
                         </div>
-
                         <div class="item">
-                            <a href="https://love-and-gift.herokuapp.com/products/5"><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcpczkm35gj31hc0kuqnp.jpg" alt="chocolate"></a>
+                            <img src="..." alt="...">
                             <div class="carousel-caption">
-                                <span class="lead">
-                                    <h1>SKILL OF ROMANCE</h1><br>
-                                    <p>
-                                        <a class="btn btn-lg btn-default" href="https://love-and-gift.herokuapp.com/products/5">Buy Now</a>
-                                    </p>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <a href="https://love-and-gift.herokuapp.com/products/2"><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcpdgqoox2j31hc0ku1kx.jpg" alt="rose"></a>
-                            <div class="carousel-caption">
-                                <span class="lead">
-                                    <h1>BEST FOR HER</h1><br>
-                                    <p>
-                                        <a class="btn btn-lg btn-default" href="https://love-and-gift.herokuapp.com/products/2">Buy Now</a>
-                                    </p>
-                                </span>
-
+                                ...
                             </div>
                         </div>
                     </div>
 
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -145,455 +177,387 @@
             </div>
         </div>
 
-        <!-- 以下是系列导航 -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="row">
-                    <div class="row">
-                        <div class="btn-group btn-group-justified">
-                            <a href="#s1" class="btn btn-info">ROSE</a>
-                            <a href="#s2" class="btn btn-info">CHOCOLATE</a>
-                            <a href="#s3" class="btn btn-info">SMALL PART</a>
-                            <a href="#s4" class="btn btn-info">FLOWERS</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 以下是第二栏 -->
-
+        <!-- 以下是第二部分 -->
         <div class="container">
-            <div class="row">
-                <div class="ItmeTitle">
-                    <h1>HIGHLY RECOMMEND</h1>
-                    <p style="font-size: 30px;">taste sweet, taste happiness</p>
+            <!--设置产品图整个模块-->
+            <div class="row" style="margin-left:80px; margin-right:80px;">
+                <!--设置模块两边宽度-->
+
+                <!--以下是第一栏-->
+                <table class="itable" id="itable" style="width:100%;">
+
+                    <tr class="imgblock">
+
+                        <td class="product_data" colspan="2" style="width:75%; height:460px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+
+                        <td class="product_data" colspan="2" style="width:25%; height:460px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--以下是第二栏-->
+                <table class="itable" id="itable" style="width:100%;">
+                    <!--以下是第一行-->
+                    <tr class="imgblock">
+                        <!--以下是第一格-->
+                        <td class="product_data" style="width:25%; height:230px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <!--以下是第二格-->
+                        <td class="product_data" style="width:25%; height:230px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <!--以下是第三格-->
+                        <td class="product_data" rowspan="2" style="width:50%; height:230px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!--以下是第二行-->
+                    <tr class="imgblock">
+                        <!--以下是第一格-->
+                        <td class="product_data" colspan="2" style="width:50%; height:230px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <!--以下是第三栏-->
+                <table class="itable" id="itable" style="width:100%;">
+                    <!--以下是第一行-->
+                    <tr class="imgblock">
+                        <!--以下是第一格-->
+                        <td class="product_data" rowspan="2" style="width:50%; height:230px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <!--以下是第二格-->
+                        <td class="product_data" style="width:25%; height:230px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <!--以下是第三格-->
+                        <td class="product_data" style="width:25%; height:230px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!--以下是第二行-->
+                    <tr class="imgblock">
+                        <!--以下是第一格-->
+                        <td class="product_data" colspan="2" style="width:50%; height:230px;">
+                            <a href="#" target="_blank">
+                                <!--放入产品详情页面链接-->
+                                <img src="#" alt="#" class="image">
+                                <!--放入产品图片，名字-->
+                            </a>
+                            <div class="overlay">
+                                <a href="#" target="_blank">
+                                    <!--放入产品详情页面链接-->
+                                    <div class="text">
+                                        <div class="i_title">XXXXXXX</div>
+                                        <div class="i_subtitled">BBBBBBBBBBB</div>
+                                        <div class="i_price">
+                                            ￥
+                                            <sam>69</sam>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <!-- 以下是标题 -->
+                <div class="title" style="margin-top:80px; margin-bottom:40px;">
+                    <span>
+                        <h2>--------&nbsp&nbsp&nbsp XXXXXXXXX &nbsp&nbsp&nbsp--------</h2>
+                    </span>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <div class="thumbnail">
-                        <a href="https://love-and-gift.herokuapp.com/products/3" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwly1fcrr0gifnkj30go0b445l.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
+
+                <!-- 以下是第四栏 -->
+                <!-- 以下是第一行 -->
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="#">
+                            <img src="#" alt="#" width="300" height="200">
                         </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Chocolate Mix</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥999 &nbsp&nbsp&nbsp<a href="https://love-and-gift.herokuapp.com/products/3" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
+                        <div class="desc">Add a description of the image here</div>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <div class="thumbnail">
-                        <a href="https://love-and-gift.herokuapp.com/products/5" target="_blank">
-                            <img src="https://ww2.sinaimg.cn/large/006tNbRwly1fcrr1r4b26j31kw11x11u.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="#">
+                            <img src="#" alt="#" width="600" height="400">
                         </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Chocolate Strawberries</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥888 &nbsp&nbsp&nbsp<a href="https://love-and-gift.herokuapp.com/products/5" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
+                        <div class="desc">Add a description of the image here</div>
                     </div>
                 </div>
+
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="img_lights.jpg">
+                            <img src="#" alt="#" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="img_mountains.jpg">
+                            <img src="#" alt="#" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- 以下是第二行 -->
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="#">
+                            <img src="#" alt="#" width="300" height="200">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="#">
+                            <img src="#" alt="#" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="img_lights.jpg">
+                            <img src="#" alt="#" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="img_mountains.jpg">
+                            <img src="#" alt="#" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- 以下是第三行 -->
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="#">
+                            <img src="#" alt="#" width="300" height="200">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="#">
+                            <img src="#" alt="#" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="img_lights.jpg">
+                            <img src="#" alt="#" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="responsive">
+                    <div class="img">
+                        <a target="_blank" href="img_mountains.jpg">
+                            <img src="#" alt="#" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
 
             </div>
-        </div>
 
-        <!-- 以下是第三栏 -->
-
-        <div class="container">
-            <div class="row">
-                <div class="ItmeTitle">
-                    <h1 id="s1">ONLY FOR
-                    </h1>
-                    <p style="font-size: 30px;">special one in special day</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fcpdh5hl2hj30go0b4n2q.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Red Rose</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥999 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww2.sinaimg.cn/large/006tNbRwly1fcrrkt7tdrj30j20j2n0j.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Pink Rose</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥888 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fcpeeeaz6mj30go0b479e.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Colourful Rose</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥33.4 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <br>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwly1fcrrn8qro9j30in0in40h.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Rose in Heart</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥888 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp538ldshj30go0b4n39.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Bouquet</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥888 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="https://love-and-gift.herokuapp.com/products/1" target="_blank">
-                            <img src="https://ww4.sinaimg.cn/large/006tNbRwly1fcrrxmkz62j30a30a3myi.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Colourful Rose</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥888 &nbsp&nbsp&nbsp<a href="https://love-and-gift.herokuapp.com/products/1" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="ItmeTitle">
-                    <h1 id="s2">NICE GIFT</h1>
-                    <p style="font-size: 30px;">she deserved</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fcpdhogiwwj30go0b445l.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Chocolate Mix</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥888 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp2jxpc0hj30go0b4agi.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Strawberry</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥28.8 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp54pf6crj30go0b4q7g.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Happy Cake</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥33.4 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fcp55enqzfj30go0b4wiq.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Couple Rings</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥88.8 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww4.sinaimg.cn/large/006tNbRwly1fcrrzrpuqbj30j60j6goo.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Chocolate Mix</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥999 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp5588s8aj30go0b4dk8.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Pink Lily</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥99.9 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="ItmeTitle">
-                    <h1 id="s3">CLASSIC WORK</h1>
-                    <p style="font-size: 30px;">will always be worth collecting</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwly1fcrs9wh973j31kw23ukjl.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Beast</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥88.8 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww2.sinaimg.cn/large/006tNbRwly1fcrs8sbjeqj31kw23ub29.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Beast</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥999 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwly1fcrs8ps6g6j31kw23unpd.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Beast</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥99.9 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww4.sinaimg.cn/large/006tNbRwly1fcrs978uzcj30h30cmgnb.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Beast Box</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥88.8 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwly1fcrs8zqsxjj30i40i477n.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Music Box</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥999 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww2.sinaimg.cn/large/006tNbRwly1fcrs8xh8m4j30h40cndhq.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Beast Cup</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥99.9 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="ItmeTitle">
-                    <h1 id="s4">MORE FLOWERS</h1>
-                    <p style="font-size: 30px;">more love given</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwly1fcrskrpo3mj30hs0kuq3j.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Red Rose</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥88.8 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww1.sinaimg.cn/large/006tNbRwly1fcrsu9tibtj31kw16ptpe.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Pink Rose</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥999 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww1.sinaimg.cn/large/006tNbRwly1fcrskpnc6sj30hs0ktdi4.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Colourful Rose</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥99.9 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp5588s8aj30go0b4dk8.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Pink Lily</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥88.8 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww1.sinaimg.cn/large/006tNbRwly1fcrsvnr8l3j31kw11te82.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Colourful Rose</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥999 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <a href="#" target="_blank">
-                            <img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fcp56jbviuj30go0b4gqy.jpg" class="img-responsive" style="width:100%" alt="LOVE&GIFT">
-                        </a>
-                        <div class="caption">
-                            <p class="TagName">
-                                <b>Colourful Tulip</b>&nbsp&nbsp&nbsp&nbsp&nbsp￥99.9 &nbsp&nbsp&nbsp<a href="#" class="btn btn-primary btn-xs">Check</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
 
     </body>
 </html>
+</div>
+
+</div>
+
 </body>
 </html>
