@@ -6,10 +6,116 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
 
+            .fa-arrow-circle-up {
+                font-size: 35px;
+                text-align: center;
+                color: #333;
+
+            }
+            .fa-arrow-circle-up:hover {
+                font-size: 35px;
+                text-align: center;
+                color: #E61C64;
+                position: relative;
+            }
+
+            .top-line img {
+                text-align: center;
+                position: relative;
+                width: 100%;
+            }
+
+            ul {
+                list-style-type: none;
+                margin-left: 310px;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: #333;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 15px;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+                margin: 15px;
+            }
+            li a:hover {
+                background-color: #E61C64;
+                border-radius: 5px;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .badge {
+                color: #fff;
+                background-color: #E61C64;
+            }
+
+        </style>
     </head>
 
     <body>
+
+        <!-- 以下是GoToTop line -->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="row">
+                    <div class="top-line" style="margin-top: 180px; text-align: center">
+                        <div>
+                            <a href="#top-zone">
+                                <i class="fa fa-arrow-circle-up"></i>
+                            </a>
+                            <img src="https://ww4.sinaimg.cn/large/006tNc79ly1fcxg8dgfe5g31hc01zmwx.gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 以下是底端导航 -->
+        <div class="container">
+            <div class="row">
+                <ul class="nav-line">
+                    <li>
+                        <a href="/products">
+                            <i class="fa  fa-heartbeat"></i>
+                            红玫瑰<span class="badge">hot</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products">
+                            <i class="fa  fa-gratipay"></i>
+                            <span>巧克力</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products">
+                            <i class="fa  fa-gift"></i>
+                            <span>小信物</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products">
+                            <i class="fa  fa-envira"></i>
+                            <span>花世界</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 以下是footer -->
         <div class="row">
             <footer class="container-fluid text-center bg-lightgray">
 
