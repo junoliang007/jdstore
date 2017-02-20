@@ -21,15 +21,21 @@
 /* for navbar panel */
 
 .navbar-default {
-    background-color: #262b3a;//背景颜色
-    border-color: #262b3a;//边框色
-    margin-bottom: 0;//底部 margin 不撑开距离
+    background-color: #352645;//背景颜色
+    border-bottom-color: #1d112a;
+    margin-bottom: 0px;//底部 margin 不撑开距离
+
 }
 
 .navbar {
         border-radius: 0; //圆角为0
-
     }
+
+    .navbar-fixed-top, .navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+}
 
 .navbar-brand > img {
         margin-right: 0; //图片和链接文字拉开一点距离
