@@ -9,45 +9,96 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
         <style>
-            .jumbotron {
-                margin-bottom: 0;
-                height: 160px;
-                background: none;
-            }
-            .jumbotron h1 {
-                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-                font-size: 45px;
-                margin-top: -16px;
-                color: #E61C64;
 
+            .logo img {
+                width: 8%;
+                height: auto;
+                float: left;
+                margin-left: 180px;
             }
 
-            .jumbotron p {
+            .search {
+                float: left;
+                /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+                width: 450px;
+                margin-left: 200px;
+                /*右边距*/
+                margin-top: 40px;
+                /*上边距*/
+                position: relative;
+                /*相对定位*/
+            }
+
+            .search-input {
+                width: 450px;
+                height: 40px;
+                line-height: 40px;
+                /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+                color: #666;
+                padding: 4px 20px;
+                /*调一下上下左右边距*/
+                border-width: 2px;
+                /*边框宽度为2px*/
+                border-color: #333;
+                /*设置边框颜色为红色*/
+                border-style: solid;
+                /*设置为实线*/
+                font-size: 14px;
+                /*字体14px*/
+                font-family: "microsoft yahei";
+                /*设置成微软雅黑字体*/
+                border-radius: 5px;
+                /*圆角20px*/
+            }
+
+            .btn-primary {
+                background-color: red;
+                border-color: red;
                 font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-                font-size: 20px;
-                margin-bottom: 30px;
+            }
+            .btn-primary:hover {
+                background-color: #ea0a0a;
+                border-color: #ea0a0a;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+            button {
+                float: left;
             }
 
         </style>
     </head>
 
-    <!-- 以下是店招 -->
-    <!-- <div class="jumbotron">
-        <div class="container text-center">
-            <h1>花好月缘</h1>
-            <span class="slogan">
-
-                <p>
-                    <i class=" fa-icon1 fa fa-heart"></i>助有情人终成眷属<i class="fa-icon2 fa fa-heart"></i>
-                </p>
-
-            </span>
-        </div>
-    </div> -->
-
     <!-- 以下是导航栏 -->
 
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
+
+        <!-- 以下是店招 -->
+
+        <div class="signboard" style="background-color: #fff; height:130px;">
+
+            <div class="logo">
+                <a href="/"><img src="https://ww1.sinaimg.cn/large/006tNc79ly1fcx428agm9g30mm0nxt8z.gif" alt="LOVE&GIFT"></a>
+            </div>
+
+            <!-- 以下是搜索框 -->
+
+            <div>
+                <div class="search">
+                    <form action="/products/search" accept-charset="UTF-8" method="get">
+                        <div class="input-group input-group-lg">
+                            <input type="text" class="form-control" name="query_string" placeholder="助有情人终成眷属">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid">
             <!--Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
