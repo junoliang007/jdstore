@@ -10,18 +10,9 @@
 
         <style>
 
-            body {
+            /*body {
                 background: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
-            }
-
-            .container {
-                margin-top: 50px;
-                margin-bottom: 50px;
-            }
-
-            .caption {
-                font-size: 16px;
-            }
+            }*/
 
             .btn-primary {
                 background-color: #E61C64;
@@ -34,45 +25,24 @@
                 font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
             }
 
-            .link_to {
-                float: left;
-            }
-
-            .arrow {
-                display: inline-block;
-                padding: 5px;
-                text-decoration: none;
-                font-size: 20px;
-            }
-
-            .link_to a {
-                display: inline-block;
-                padding: 5px;
-                text-decoration: none;
-                font-size: 20px;
-            }
-            .link_to a:hover {
-                color: #E61C64;
-            }
-
             .warning {
                 font-size: 30px;
                 color: #E61C64;
                 font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
             }
 
-            .product-description {
+            .product_description {
                 font-size: 18px;
                 font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
             }
 
-            .product-price {
+            .product_price {
                 font-size: 23px;
                 font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
                 text-align: left;
             }
 
-            .product-quantity {
+            .product_quantity {
                 font-size: 18px;
                 font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
             }
@@ -82,93 +52,56 @@
     </head>
 
     <body>
-
         <div class="container">
-            <div class="row">
-                <ul style="list-style-type:none">
-                    <li class="link_to">
-                        <a href="/">Home</a>
-                    </li>
-                    <li class="link_to">
-                        <p class="arrow">></p>
-                    </li>
-                    <li class="link_to">
-                        <a href="/products">Products</a>
-                    </li>
-                    <li class="link_to">
-                        <p class="arrow">></p>
-                    </li>
-                    <li class="link_to">
-                        <a href="#"><%= @product.title %></a>
-                    </li>
-                    <li class="link_to">
-                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
-                    </li>
-                    <li class="link_to">
-                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
-                    </li>
-                    <li class="link_to">
-                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
-                    </li>
+            <div class="main">
+                <div id="product_show" class="center">
 
-                    <div class="searchBar">
-                        <div class="col-sm-6">
-                            <%= form_tag search_products_path, method: :get, class: 'products-search-form'  do %>
-                            <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" name="query_string" placeholder="text here">
-                                <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-primary">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-                            <% end %>
+                    <!-- 以下是左边图像区 -->
+                    <div class="left" id="product_img">
+                        <% if @product.image.present? %>
+                        <%= image_tag(@product.image.medium.url) %>
+                    <% else %>
+                        <%= image_tag("http://placehold.it/600x600&text=No Pic") %>
+                        <% end %>
+                    </div>
+
+                    <!-- 以下是右边产品信息区 -->
+                    <div class="right" id="product_info">
+                        <h1>
+                            <%= @product.title %>
+                        </h1>
+                        <div class="product_description" style="height:200px;">
+                            <p>
+                                <%= @product.description %>
+                            </p>
                         </div>
-                    </div>
-                </ul>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <% if @product.image.present? %>
-                    <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                    <% end %>
-                </div>
-                <div class="col-md-6">
-                    <h1>
-                        <%= @product.title %>
-                    </h1>
-                    <div class="product-description" style="height:50px;">
-                        <p>
-                            <%= @product.description %>
-                        </p>
-                    </div>
-                    <div class="well">
-                        <div class="product-price">
+                        <div class="product_price">
                             Price： ￥
                             <%= @product.price %>
                         </div>
-                    </div><br/>
-                    <div class="product-quantity">
-                        Quantity：
-                        <%= @product.quantity %>
-                    </div><br/><br/><hr/>
 
-                    <div class="pull-left">
-                        <% if @product.quantity.present? && @product.quantity >0 %>
-                        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-                    <% else %>
-                        <p class="warning">
-                            <i class="fa fa-exclamation-triangle fa-fw"></i>Sorry, SALE UP<p>
-                                <% end %>
+                        <div class="product_quantity">
+                            Quantity：
+                            <%= @product.quantity %>
+                        </div>
+
+                        <div class="pull-left">
+                            <% if @product.quantity.present? && @product.quantity >0 %>
+                            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+                        <% else %>
+                            <p class="warning">
+                                <i class="fa fa-exclamation-triangle fa-fw"></i>Sorry, SALE UP<p>
+                                    <% end %>
+                                </div>
                             </div>
+                            <div class="clear"></div>
                         </div>
                     </div>
                 </div>
+
+                <!-- 以下是推荐区 -->
+                <div class="center detail_recommend"></div>
 
             </body>
         </html>
