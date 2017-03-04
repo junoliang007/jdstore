@@ -1,254 +1,131 @@
-<!DOCTYPE html>
-<html>
+ 
+<nav class="navbar navbar-default" role="navigation">
 
-    <head>
-        <title>LOVE&GIFT</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="container-fluid">
+  <div class="row">
+      <!--Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+              <img src='<%= image_url "logo.png"  %>' style="color: #fff">
+              LOVE&GIFT
+          </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+              <li class="dropdown">
+                  <a href="/products" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                      <i class="fa fa-th-list"></i>
+                      所有产品
+                      <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu" role="menu" data-no-turbolink="true">
+                      <li>
+                          <a href="/products">
+                              <i class="fa fa-fw fa-th-list"></i>
+                              <span>查看全部</span>
+                          </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                          <a href="/products">
+                              <i class="fa fa-fw fa-heartbeat"></i>
+                              红玫瑰<span class="badge">hot</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="/products">
+                              <i class="fa fa-fw fa-gratipay"></i>
+                              <span>巧克力</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="/products">
+                              <i class="fa fa-fw fa-gift"></i>
+                              <span>小信物</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="/products">
+                              <i class="fa fa-fw fa-envira"></i>
+                              <span>花世界</span>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
 
-        <style>
+          </ul>
 
-            .logo img {
-                width: 8%;
-                height: auto;
-                float: left;
-                margin-left: 180px;
-            }
+          <ul class="nav navbar-nav navbar-left">
+              <li>
+                  <a href="/products">
+                      <i class="fa  fa-heartbeat"></i>
+                      红玫瑰<span class="badge">hot</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/products">
+                      <i class="fa  fa-gratipay"></i>
+                      <span>巧克力</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/products">
+                      <i class="fa  fa-gift"></i>
+                      <span>小信物</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/products">
+                      <i class="fa  fa-envira"></i>
+                      <span>花世界</span>
+                  </a>
+              </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
 
-            .btn-primary {
-                background-color: #E61C64;
-                border-color: #E61C64;
-                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-            }
-            .btn-primary:hover {
-                background-color: #d10b51;
-                border-color: #d10b51;
-                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-            }
+              <li>
+                  <%= link_to carts_path do %>
+                  购物车
+                  <i class="fa fa-shopping-cart"></i>
+                  (<%= current_cart.products.count %>)
+                  <% end %>
+              </li>
 
-            .cart-wrap {
-                float: left;
-                /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
-                margin-top: 43px;
-                /*上边距*/
-                margin-left: 130px;
-                /*左边距*/
-            }
-
-            .cart {
-                padding: 8px 20px;
-                /*加内边距*/
-                cursor: pointer;
-                /*鼠标一上去，显示手型*/
-                border: 1px solid #DFDFDF;
-                /*1像素，实线，灰色*/
-                background: #F5F5F5;
-                /*灰色背景*/
-                border-radius: 5px;
-                /*圆角20px*/
-                font-size: 12px;
-                /*字体小一点好看*/
-                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-            }
-
-            .fa-shopping-cart {
-                color: #E61C64;
-                /*红色图标*/
-                font-size: 16px;
-                /*图标大一点好看*/
-                margin-right: 10px;
-                /*右边距*/
-            }
-
-            .cart a {
-                color: #6D6D6D;
-                /*灰色字体*/
-                text-decoration: none;
-                /*不要下划线*/
-            }
-            .cart a:hover {
-                color: #E61C64;
-                /*鼠标一上去的时候，字体变成红色*/
-            }
-
-            .navbar-right .login .log-in-btn {
-                color: #E61C64;
-
-            }
-            .log-in-btn,
-            .log-in-btn:active,
-            .log-in-btn:visited {
-                display: block;
-                border: 1px solid #fff;
-                /*background-color:*/
-                margin: 14px 5px 14px 35px;
-                border-radius: 6px;
-                height: 28px;
-                width: 68px;
-                color: #fff;
-                text-align: center;
-                padding: 0 !important;
-                line-height: 28px !important;
-            }
-            .log-in-btn:hover {
-                color: #fff !important;
-                background-color: rgba(230,28,100,0.86) !important;
-            }
-
-            .navbar-right .signup .sign-up-btn {
-                color: #fff;
-            }
-            .sign-up-btn,
-            .sign-up-btn:active,
-            .sign-up-btn:visited {
-                display: block;
-                border: 1px solid rgba(230,28,100,0.96) !important;
-                background-color: rgba(230,28,100,0.96) !important;
-                margin: 14px 0 14px 15px;
-                border-radius: 6px;
-                height: 28px;
-                width: 68px;
-                color: #fff;
-                text-align: center;
-                padding: 0 !important;
-                line-height: 28px !important;
-            }
-            .sign-up-btn:hover {
-                color: #fff !important;
-                background-color: rgba(230,28,100,0.86) !important;
-            }
-
-        </style>
-    </head>
-
-    <nav class="navbar navbar-default" id="top-zone" role="navigation">
-
-        <div class="container-fluid">
-            <div class="row">
-                <!--Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">
-                        <img src='<%= image_url "logo.png"  %>' style="color: #fff">
-                        LOVE&GIFT
-                    </a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="/products" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <i class="fa fa-th-list"></i>
-                                所有产品
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu" role="menu" data-no-turbolink="true">
-                                <li>
-                                    <a href="/products">
-                                        <i class="fa fa-fw fa-th-list"></i>
-                                        <span>查看全部</span>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="/products">
-                                        <i class="fa fa-fw fa-heartbeat"></i>
-                                        红玫瑰<span class="badge">hot</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/products">
-                                        <i class="fa fa-fw fa-gratipay"></i>
-                                        <span>巧克力</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/products">
-                                        <i class="fa fa-fw fa-gift"></i>
-                                        <span>小信物</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/products">
-                                        <i class="fa fa-fw fa-envira"></i>
-                                        <span>花世界</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="/products">
-                                <i class="fa  fa-heartbeat"></i>
-                                红玫瑰<span class="badge">hot</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/products">
-                                <i class="fa  fa-gratipay"></i>
-                                <span>巧克力</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/products">
-                                <i class="fa  fa-gift"></i>
-                                <span>小信物</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/products">
-                                <i class="fa  fa-envira"></i>
-                                <span>花世界</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <li>
-                            <%= link_to carts_path do %>
-                            购物车
-                            <i class="fa fa-shopping-cart"></i>
-                            (<%= current_cart.products.count %>)
-                            <% end %>
-                        </li>
-
-                        <% if !current_user %>
-                        <li><%= link_to("登录", new_user_session_path, :class => "btn btn-primary log-in-btn") %></li>
-                        <li><%= link_to("注册", new_user_registration_path, :class => "btn btn-primary sign-up-btn") %></li>
-                    <% else %>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-fw fa-user-circle" aria-hidden="true"></i><%= current_user.email %>
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <% if current_user.admin? %>
-                                <li>
-                                    <%= link_to("Admin Panel", admin_products_path) %>
-                                </li>
-                                <% end %>
-                                <li>
-                                    <%= link_to("My Order", account_orders_path) %>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                                </li>
-                            </ul>
-                        </li>
-                        <% end %>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-
-    </html>
+              <% if !current_user %>
+              <li><%= link_to("登录", new_user_session_path, :class => "btn btn-primary log-in-btn") %></li>
+              <li><%= link_to("注册", new_user_registration_path, :class => "btn btn-primary sign-up-btn") %></li>
+          <% else %>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-fw fa-user-circle" aria-hidden="true"></i><%= current_user.email %>
+                      <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <% if current_user.admin? %>
+                      <li>
+                          <%= link_to("Admin Panel", admin_products_path) %>
+                      </li>
+                      <% end %>
+                      <li>
+                          <%= link_to("My Order", account_orders_path) %>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                          <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                      </li>
+                  </ul>
+              </li>
+              <% end %>
+          </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+</nav>
